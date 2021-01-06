@@ -34,7 +34,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(600, 200);
+  createCanvas(600, 600);
   
   trex = createSprite(50,180,20,50);
   
@@ -70,7 +70,7 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-  background("cyan");
+  background("lime");
   text("Score: "+ score, 500,50);
   
   if (gameState===PLAY){
@@ -109,8 +109,8 @@ function draw() {
     trex.changeAnimation("collided",trex_collided);
     
     //set lifetime of the game objects so that they are never destroyed
-    obstaclesGroup.setLifetimeEach(-1);
-    cloudsGroup.setLifetimeEach(-1);
+    obstaclesGroup.setLifetimeEach(-2);
+    cloudsGroup.setLifetimeEach(-2);
     
     if(mousePressedOver(restart)) {
       reset();
